@@ -29,7 +29,7 @@ if [ "$1" ] ; then
   fi
 fi
 
-NS=openfaas
+NS=jahentao
 
 echo "Building $NS/gateway:$eTAG with $dockerfile for $arch"
 

@@ -21,7 +21,9 @@ if [ "$1" ] ; then
   fi
 fi
 
-echo Pushing openfaas/gateway:$eTAG
+NS=jahentao
 
-docker push openfaas/gateway:$eTAG
+echo Pushing $NS/gateway:$eTAG
+
+docker push $NS/gateway:$eTAG
 
