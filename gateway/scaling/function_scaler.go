@@ -63,6 +63,7 @@ func (f *FunctionScaler) Scale(functionName string) FunctionScaleResult {
 	f.Cache.Set(functionName, queryResponse)
 
 	if queryResponse.AvailableReplicas == 0 {
+		log.Println("AvailableReplicas = [0].")
 		minReplicas := uint64(1)
 		if queryResponse.MinReplicas > 0 {
 			minReplicas = queryResponse.MinReplicas

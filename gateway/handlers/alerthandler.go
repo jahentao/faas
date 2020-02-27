@@ -107,7 +107,11 @@ func CalculateReplicas(status string, currentReplicas uint64, maxReplicas uint64
 			newReplicas = currentReplicas + step
 		}
 	} else { // Resolved event.
-		newReplicas = minReplicas
+		if currentReplicas - step < minReplicas {
+			newReplicas = minReplicas
+		} else {
+			newReplicas = currentReplicas - step
+		}
 	}
 
 	return newReplicas
